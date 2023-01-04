@@ -1,0 +1,40 @@
+<!DOCTYPE html><html> <head><meta charset=utf-8><title>PigeonHole - BETA Sign-up</title><meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1"><link rel=stylesheet href=https://jqueryvalidation.org/files/demo/site-demos.css><link rel=stylesheet href=../../overrides/assets/stylesheets/line-awesome.min.css><link rel=stylesheet href=../../overrides/assets/stylesheets/style-signup.css><link rel=stylesheet href=../../overrides/assets/stylesheets/roboto-font.css></head> <body class=form-v2> <div class=page-content> <div class=form-v2-content> <div class=form-left> <img src=../../assets/images/form-v2.jpg alt=form> <div class=text-1> <!-- <p><span>try Unlimited</span></p> --> </div> <div class=text-2> <!-- <p><span>$9.99</span>/ Month</p> --> </div> </div> <form class=form-detail action=https://formkeep.com/f/bd234455b201 accept-charset=UTF-8 enctype=multipart/form-data method=POST id=myform> <h2>PigeonHole BETA</h2> <div class=form-row> <label for=name>Full Name:</label> <input type=text name=name id=name class=input-text placeholder="ex: Lindsey Wilson"> </div> <div class=form-row> <label for=email>Your Email:</label> <input type=text name=email id=email class=input-text required pattern=[^@]+@[^@]+.[a-zA-Z]{2,6}> </div> <div class=form-row> <label for=os>Operating System:</label> <select name=os id=os class="input-text fill-width"> <option disabled selected value> -- select an option -- </option> <option value=macos>MacOS</option> <option value=linux>Linux</option> <option value=windows>Windows</option> </select> </div> <div class=form-row> <label for=size>Team Size:</label> <select name=size id=size class="input-text fill-width"> <option disabled selected value> -- select an option -- </option> <option value=1>1</option> <option value=2-10>2-10</option> <option value=11-30>11-50</option> <option value=50+>50+</option> </select> </div> <div class=form-row> <label for=idp>Identity Provider:</label> <select name=idp id=idp class="input-text fill-width"> <option disabled selected value> -- select an option -- </option> <option value=microsoft>Microsoft/Azure</option> <option value=google>Google</option> <option value=okta>Okta</option> <option value=other>other</option> </select> </div> <!-- <div class="form-checkbox">
+					<label class="container"><p>By signing up, you agree to the <a href="#" class="text">Play Term of Service</a></p>
+					  	<input type="checkbox" name="agree" id="agree">
+					  	<span class="checkmark"></span>
+					</label>
+				</div> --> <div class=form-row-last> <input type=submit name=register class="register !fill-width" value=Sign-up> </div> </form> </div> </div> <script src=https://code.jquery.com/jquery-1.11.1.min.js></script> <script src=https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js></script> <script src=https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js></script> <script>
+		// just for the demos, avoids form submit
+		// jQuery.validator.setDefaults({
+		//   	debug: false,
+		//   	success:  function(label){
+    //     		label.attr('id', 'valid');
+   	// 	 	},
+		// });
+		$( "#myform" ).validate({
+		  	rules: {
+		    	name: "required",
+		    	email: "required",
+		    	idp: "required",
+		    	os: "required",
+		    	size: "required",
+		  	},
+		  	messages: {
+		  		name: {
+		  			required: "Please provide your name"
+		  		},
+		  		email: {
+		  			required: "Please provide your email"
+		  		},
+		  		idp: {
+		  			required: "Please provide your Identity Provider"
+		  		},
+		  		os: {
+	  				required: "Please provide your Operating System"
+		  		},
+		  		size: {
+	  				required: "Please provide your team size"
+		  		}
+		  	}
+		});
+	</script> </body> </html>
